@@ -1,0 +1,87 @@
+<div mat-dialog-title>
+    <h1>Employee Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <input  type="hidden" placeholder="Ex. Technical" formControlName="id">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Technical" formControlName="name">
+                <div *ngIf="empForm.controls['name'].invalid && (empForm.controls['name'].dirty || empForm.controls['name'].touched)" class="alert alert-danger">
+                    <div *ngIf="empForm.errors?.['required']">
+                    Name is required.
+                  </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Domain</mat-label>
+                <input matInput placeholder="Ex. Domain" formControlName="domain">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+                <div *ngIf="empForm.controls['email'].invalid && (empForm.controls['email'].dirty || empForm.controls['email'].touched)" class="alert alert-danger">
+                    <div *ngIf="empForm.errors?.['required']">
+                    Email is required.
+                  </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <div *ngIf="empForm.controls['dob'].invalid && (empForm.controls['dob'].dirty || empForm.controls['dob'].touched)" class="alert alert-danger">
+                    <div *ngIf="empForm.errors?.['required']">
+                    DOB is required.
+                  </div>
+                </div>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="others">Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Numner</mat-label>
+                <input matInput placeholder="Ex. 4" type="number" formControlName="phone">
+                <div *ngIf="empForm.controls['phone'].invalid && (empForm.controls['phone'].dirty || empForm.controls['phone'].touched)" class="alert alert-danger">
+                    <div *ngIf="empForm.errors?.['required']">
+                    Mobile is required.
+                  </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Location</mat-label>
+                <input matInput placeholder="Ex. Google" formControlName="location">
+            </mat-form-field>
+        </div>
+        <!-- <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Experience</mat-label>
+                <input matInput placeholder="Ex. 4" type="number" formControlName="experience">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Package</mat-label>
+                <input matInput placeholder="Ex. 12" type="number" formControlName="package">
+                <mat-hint>In rupees</mat-hint>
+            </mat-form-field>
+        </div> -->
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

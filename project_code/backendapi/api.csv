@@ -1,0 +1,96 @@
+For get api  =======>
+
+
+Request URL: http://localhost/backendapi/users
+Request Method: GET
+
+[
+    {
+        "id": 7,
+        "name": "amendra rajput",
+        "email": "amendrar@gmail.com",
+        "domain": "google.com",
+        "location": "lko",
+        "phone": "8960883558",
+        "gender": "male",
+        "dob": "1995-06-24"
+    },
+    {
+        "id": 8,
+        "name": "amendra rajput",
+        "email": "amendrar@gmail.com",
+        "domain": "google.com",
+        "location": "lko",
+        "phone": "8960883558",
+        "gender": "male",
+        "dob": "1995-06-24"
+    },
+    {
+        "id": 9,
+        "name": "aditya",
+        "email": "a@gmail.com",
+        "domain": "google.com",
+        "location": "test",
+        "phone": "1234567891",
+        "gender": "male",
+        "dob": "2020-05-10"
+    },
+    {
+        "id": 11,
+        "name": "amendra rajput",
+        "email": "amendrar@gmail.com",
+        "domain": "google.com",
+        "location": "test.com",
+        "phone": "8960883558",
+        "gender": "maile",
+        "dob": "1995-06-24"
+    }
+]
+
+
+
+For Delete api ====>
+
+Request URL: http://localhost/backendapi/users/15
+Request Method: DELETE
+
+{
+    "message": "User deleted successfully!",
+    "error": false
+}
+
+
+For PUT api =====>
+
+
+Request URL: http://localhost/backendapi/users/11
+Request Method: PUT
+payload
+{
+    "id": 11,
+    "name": "amendra rajput",
+    "domain": "google.com",
+    "email": "amendrar@gmail.com",
+    "dob": "1995-06-24",
+    "gender": "maile",
+    "location": "test.com",
+    "phone": "8960883558"
+}
+
+{"message":"User updated successfully!","error":false}
+
+For Post api  ===>
+
+Request URL: http://localhost/backendapi/users
+Request Method: POST
+
+{
+    "id": "",
+    "name": "saket",
+    "domain": "sk.com",
+    "email": "sk@gmail.com",
+    "dob": "2023-03-14T18:30:00.000Z",
+    "gender": "male",
+    "location": "ptt",
+    "phone": 123456789
+}
